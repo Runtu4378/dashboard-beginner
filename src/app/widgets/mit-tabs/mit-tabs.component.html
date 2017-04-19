@@ -1,0 +1,14 @@
+<div class="tabs">
+  <div [class]="styles">
+    <div class="tab-header ">
+      <a class="tab-title" *ngFor="let tab of tabs" [routerLink]="[tab.link]" [class.active]="currentUrl == tab.link">
+        <i class="icon {{tab.icon}}" *ngIf="tab.icon"></i> {{tab.name}}
+      </a>
+    </div>
+    <div class="tab-body">
+      <div>
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="time-picker">
+  <div class="form-group row">
+    <div class="col-sm-4">
+      <input type="number" [(ngModel)]="hour" min="0" max="24" class="form-control" (ngModelChange)="change(hour,minute,time)" placeholder="Hour">
+    </div>
+    <div class="col-sm-1">
+      :
+    </div>
+    <div class="col-sm-4">
+      <input type="number" [(ngModel)]="minute"  min="0" max="60" (ngModelChange)="change(hour,minute,time)" class="form-control" placeholder="Minute">
+    </div>
+    <div class="col-sm-3">
+      <select [(ngModel)]="time" (ngModelChange)="change(hour,minute,time)">
+        <option value="AM" selected>AM</option>
+        <option value="PM">PM</option>
+      </select>
+    </div>
+  </div>
+</div>

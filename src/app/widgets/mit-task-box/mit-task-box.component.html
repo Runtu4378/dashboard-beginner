@@ -1,0 +1,30 @@
+<div class="task-box">
+  <div class="item" (click)="isExpand = !isExpand">
+    <div class="tasklist-counts">
+      <i class="icon icon-youjian"></i>
+      <span class="mini-tag tag tag-danger">45</span>
+    </div>
+  </div>
+  <div class="tasklist-card" *ngIf="isExpand" @dropdown>
+    <div class="card-head">
+      <h5>Total<span class="item-count">256</span>message<span class="allitem" (click)="isListCollapse = !isListCollapse">All</span></h5>
+    </div>
+    <div class="card-body">
+      <ul [ngClass]="{'list-all-item':isListCollapse}">
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span> <span class="custom-label custom-label-primary">25</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span>  <span class="custom-label custom-label-danger">125</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span>  <span class="custom-label custom-label-warning">456</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span> <span class="custom-label custom-label-info">245</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span> <span class="custom-label custom-label-info">78</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span> <span class="custom-label custom-label-primary">25</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span>  <span class="custom-label custom-label-danger">125</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span>  <span class="custom-label custom-label-warning">456</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span> <span class="custom-label custom-label-info">245</span></a></li>
+        <li><a href="#"><i class="icon icon-mini-logo"></i><span>tset</span> <span class="custom-label custom-label-info">78</span></a></li>
+      </ul>
+    </div>
+    <div class="card-foot" (click)="isExpand = !isExpand">
+      <span>Collapse</span><i class="icon icon-xiangshangjiantou"></i>
+    </div>
+  </div>
+</div>

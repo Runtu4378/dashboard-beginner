@@ -1,0 +1,69 @@
+<div class="beautify-form" *ngIf="!showLoading">
+  <div class="page-header">
+   SIGN UP
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <!--first name-->
+      <div class="form-group" [ngClass]="{ 'has-danger': (form.controls.firstName.dirty || form.controls.firstName.prinstine) && form.controls.firstName.invalid && form.controls.firstName.value ,'has-success': (form.controls.firstName.dirty || form.controls.firstName.prinstine) && form.controls.firstName.valid && form.controls.firstName.value }">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon icon icon-liunicheng"></span>
+        <input type="text" class="form-control" formControlName="firstName" placeholder="FirstName">
+      </div>
+      <div class="form-control-feedback" *ngIf="(form.controls.firstName.dirty || form.controls.firstName.prinstine) && form.controls.firstName.invalid && form.controls.firstName.value">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.firstName.dirty || form.controls.firstName.prinstine) && form.controls.firstName.valid && form.controls.firstName.value">Pass</div>
+    </div>
+
+      <!--last name-->
+      <div class="form-group" [ngClass]="{ 'has-danger': (form.controls.lastName.dirty || form.controls.lastName.prinstine) && form.controls.lastName.invalid && form.controls.lastName.value ,'has-success': (form.controls.lastName.dirty || form.controls.lastName.prinstine) && form.controls.lastName.valid && form.controls.lastName.value }">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon icon icon-name"></span>
+        <input type="text" class="form-control" formControlName="lastName" placeholder="LastName">
+      </div>
+      <div class="form-control-feedback" *ngIf="(form.controls.lastName.dirty || form.controls.lastName.prinstine) && form.controls.lastName.invalid && form.controls.lastName.value">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.lastName.dirty || form.controls.lastName.prinstine) && form.controls.lastName.valid && form.controls.lastName.value">Pass</div>
+    </div>
+
+      <!--username-->
+    <div class="form-group" [ngClass]="{ 'has-danger': (form.controls.username.dirty || form.controls.username.prinstine) && form.controls.username.invalid && form.controls.username.value ,'has-success': (form.controls.username.dirty || form.controls.username.prinstine) && form.controls.username.valid && form.controls.username.value }">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon icon icon-ordinarylogin1"></span>
+        <input type="text" class="form-control" formControlName="username" placeholder="UserName">
+      </div>
+      <div class="form-control-feedback" *ngIf="(form.controls.username.dirty || form.controls.username.prinstine) && form.controls.username.invalid && form.controls.username.value">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.username.dirty || form.controls.username.prinstine) && form.controls.username.valid && form.controls.username.value">Pass</div>
+    </div>
+
+
+      <!--email-->
+    <div class="form-group" [ngClass]="{ 'has-danger': (form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.invalid && form.controls.email.value ,'has-success': (form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.valid && form.controls.email.value }">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon icon icon-youjian"></span>
+        <input type="text" class="form-control" formControlName="email" placeholder="Email">
+      </div>
+      <div class="form-control-feedback" *ngIf="(form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.invalid && form.controls.email.value">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.valid && form.controls.email.value">Pass</div>
+    </div>
+
+    <!--password-->
+    <div class="form-group" [ngClass]="{ 'has-danger': (form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.invalid && form.controls.password.value ,'has-success': (form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.valid && form.controls.password.value }">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon icon icon-mima"></span>
+        <input type="password" class="form-control" formControlName="password" placeholder="PassWord">
+      </div>
+      <div class="form-control-feedback" *ngIf="(form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.invalid && form.controls.password.value ">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.valid && form.controls.password.value ">Pass</div>
+    </div>
+    <div class="message-tips" *ngIf="messageTips">
+      <i class="icon icon-error"></i>  {{messageTips}}
+    </div>
+    <div class="form-group ">
+      <button class="btn btn-lg btn-outline-success btn-block" type="submit" [disabled]="form.controls.valid">Submit</button>
+    </div>
+    <div class="form-group">
+      <span class="noaccount-notify">Have Account?</span><a [routerLink]="['/account/signin']" class="collect-user">Sign In</a>
+    </div>
+  </form>
+</div>
+<div class="loading" *ngIf="showLoading">
+  <app-mit-loading [option]="'load4'"></app-mit-loading>
+</div>

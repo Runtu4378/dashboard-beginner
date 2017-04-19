@@ -1,0 +1,26 @@
+<div class="user-box">
+  <div class="item" (click)="isExpand = !isExpand">
+    <div class="img-wrapper">
+      <!--<span class="systeminfo-count tag tag-warning">99</span>-->
+      <img src="/assets/images/default_img/default_avatar.png">
+    </div>
+    <span>{{account.username}}</span>
+  </div>
+
+  <div class="user-box-list" *ngIf="isExpand" @dropdown>
+    <div class="card-body">
+      <ul>
+        <li>
+          <a [routerLink]="['/page/ucenter']" (click)="isExpand = !isExpand">
+            <i class="icon icon-ordinarylogin1"></i>Ucenter
+          </a>
+        </li>
+        <li>
+          <a (click)="signOut() || isExpand = !isExpand">
+            <i class="icon icon-sign-out"></i>Sign Out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

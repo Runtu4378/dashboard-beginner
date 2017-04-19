@@ -1,0 +1,64 @@
+@charset 'utf-8';
+@import '../../../assets/scss_styles/custom_scss/_custom-export.scss';
+$table-bg-color: #FFFFFF; //表格底色
+$table-tr-even-color: #F7F7F7; // 表格偶数行底色
+$table-tr-active-color: #F7F7F7; //表格行激活颜色
+$table-tr-even-border-color: #EAEAEA; //表格偶数行描边颜色
+$table-font-color: #6b6e70; //表格字体颜色
+$table-Overflow:auto;
+.mit-table {
+  padding: toRem(5px);
+  table {
+    color: $table-font-color;
+    background: $table-bg-color;
+    thead {
+      th {
+        text-align: center;
+        font-size: toRem(14px);
+        border-top: none;
+        border-bottom: 1px solid $table-tr-even-border-color;
+        &.sorting {
+          cursor: pointer;
+        }
+      }
+    }
+    tbody {
+      tr {
+        font-size: toRem(14px);
+        &:active,
+        &:hover {
+          border: 1px solid $table-tr-even-border-color;
+          background: $table-tr-active-color !important;
+        }
+      }
+      tr:nth-child(even) {
+        background: $table-tr-even-color;
+        border: 1px solid $table-tr-even-border-color;
+      }
+      td {
+        text-align: center;
+        .operator-span {
+          @extend %pointer;
+          position: relative;
+          padding: 0 1rem;
+          color: #000;
+          font-size: $fs12;
+          &:hover {
+            color: #32c5d2;
+            font-weight: 700;
+          }
+          &:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            height: 100%;
+            width: 0;
+            border-right: 1px solid #000;
+          }
+        }
+      }
+    }
+  }
+}

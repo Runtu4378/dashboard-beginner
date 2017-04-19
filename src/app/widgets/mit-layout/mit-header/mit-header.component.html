@@ -1,0 +1,29 @@
+<!--头部-->
+<header>
+  <div class="mit-header" [class.expand]="isExpand">
+     <a class="logo">
+      <span class="svg-logo logo-mini">
+        M
+      </span>
+      <div class="logo-lg">
+        <span class="svg-logo icon">
+          MIT2016
+        </span>
+      </div>
+
+    </a>
+    <nav class="navbar-custom">
+      <a class="sidebar-toggle" (click)="toggleNav()">
+        <i class="icon icon-more toggle-icon"></i>
+      </a>
+      <div class="navbar-custom-menu">
+        <div>
+          <!--<app-mit-task-box></app-mit-task-box>-->
+        </div>
+        <div>
+          <app-mit-user-box></app-mit-user-box>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

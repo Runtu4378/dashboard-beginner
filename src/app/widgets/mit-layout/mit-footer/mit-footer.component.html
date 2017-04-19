@@ -1,0 +1,8 @@
+
+<footer class="mit-footer" [class.expand]="isExpand">
+      <span class="company-name" *ngIf="info.company">{{info.company}}</span>
+      <span class="copyRight" *ngIf="info.copyRight">{{info.copyRight}}</span>
+      <span class="support" *ngIf="info.telephone">技术支持 {{info.telephone}} </span>
+      <span class="version" *ngIf="info.version">{{info.version}} </span>  
+ 
+</footer>
