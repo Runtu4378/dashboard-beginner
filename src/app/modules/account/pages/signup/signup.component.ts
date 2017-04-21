@@ -3,14 +3,17 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from '../../services/account.service';
 
+// 引入动画效果
+import { fadeIn } from '../../../../animation/fadeIn';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
+  animations: [ fadeIn ]
 })
 export class SignupComponent implements OnInit {
-
+  showForm: string;
   form: FormGroup;
   messageTips: string;
 

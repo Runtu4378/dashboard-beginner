@@ -1,9 +1,9 @@
 <div class="login-bg">
-    <div class="glass-area">
+    <div class="glass-area" [@fadeIn]="glassShow">
         <router-outlet></router-outlet>
     </div>
     <div class="opa-area">
-        <div class="title">
+        <div class="title" [@fadeIn]="glassShow">
             <div class="title-1">Welcome to LivEco</div>
             <div class="title-2">we committed for the indoor farm intelligence</div>
         </div>
