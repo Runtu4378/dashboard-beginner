@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
       'firstName': ['', Validators.required],
       'lastName': ['', Validators.required],
       'username': ['', Validators.required],
-      'email': ['', Validators.pattern('(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w+)+)')],
+      'email': ['', [Validators.required, Validators.pattern('(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w+)+)')]],
       'password': ['', [Validators.required, Validators.minLength(7), Validators.maxLength(42)]],
     });
   }

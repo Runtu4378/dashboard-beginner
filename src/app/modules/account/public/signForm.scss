@@ -1,0 +1,87 @@
+// 登录模块公共样式重构
+$feedback_hei: 1.4rem;
+.beautify-form {
+  width: 100%;
+  @include center-block;
+  .page-header {
+    font-weight: 200;
+    font-size: toRem(50px);
+    color: #FFF;
+    padding: 60px 0;
+  }
+  .form-group {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: $feedback_hei;
+
+    &.has-success {
+      margin-bottom: 0;
+      .input-group-addon,
+      input {
+        border-color: #04c57b;
+      }
+      .form-control-feedback{
+        color:#317EC6;
+      }
+    }
+    &.has-danger {
+      margin-bottom: 0;
+    }
+  }
+  .input-group {
+    border-bottom: 1px solid rgba(255,255,255, .3);
+  }
+  .input-group-addon {
+    padding-left: .6rem;
+    padding-right: .6rem;
+    background-color: transparent;
+    color: #f9f9f9;
+    border: none;
+    // background-color: rgba(111, 111, 119, 0.6);
+  }
+  .form-control {
+    background-color: rgba(0, 0, 0, 0);
+    color: #f9f9f9;
+    box-shadow: none;
+    border: none;
+    @include placeholder-color(#f9f9f9);
+  }
+  .noaccount-notify {
+    color: #fff;
+    &+a {
+      padding: 0 0.5rem;
+    }
+  }
+    
+  .form-control-feedback {
+    position: absolute;
+    width: 100%;
+    height: $feedback_hei;
+    line-height: $feedback_hei;
+    margin-top: 0;
+    text-align: right;
+  }
+  .btn {
+    color: #fff;
+    border-color: transparent;
+    @include gradient-x(#00BABA, #00B9B9);
+    border-radius: 2rem;
+    &:hover,
+    &:active {
+      border-color: transparent;
+      background-color: #04c57b;
+      color: #fff;
+    }
+  }
+  .noaccount-notify {
+    color: #EDDDCE;
+    &+a {
+      color: #f9f9f9;
+      padding: 0 0.5rem;
+    }
+  }
+  .message-tips{
+    padding: 10px 0;
+    color: #00BABA;
+  }
+}

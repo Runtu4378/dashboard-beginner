@@ -50,10 +50,12 @@ import { routing } from './app.routes';
 
 
 @NgModule({
+  // 视图类声明
   declarations: [
     ...cmp,
     ...pages
   ],
+  // 全局服务
   providers: [
 
     AuthService
@@ -64,6 +66,7 @@ import { routing } from './app.routes';
     ...widgets,
     routing
   ],
+  // 主视图类/根组件
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

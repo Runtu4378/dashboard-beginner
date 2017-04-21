@@ -41,9 +41,3 @@ src/app/pages/led/led.component.scss
 src/app/pages/led/led.component.ts
 
 src/app/services/device.management.service.ts
-
-package.json
-
-angular-cli.json
-
-src/app/app.module.ts

@@ -32,10 +32,10 @@
       <i class="icon icon-error"></i>  {{messageTips}}
     </div>
     <div class="form-group ">
-      <button class="btn btn-lg btn-outline-success btn-block" type="submit" [disabled]="form.controls.userName.invalid || form.controls.password.invalid">Submit</button>
+      <button class="btn btn-lg btn-outline-success btn-block" type="submit" [disabled]="form.controls.userName.invalid || form.controls.password.invalid">Sign In</button>
     </div>
     <div class="form-group">
-      <span class="noaccount-notify">No Account?</span><a [routerLink]="['/account/signup']" class="collect-user">Sign Up</a>
+      <span class="noaccount-notify">Don't have an account?</span><a [routerLink]="['/account/signup']" class="collect-user">Sign Up</a>
     </div>
   </form>
 </div>
