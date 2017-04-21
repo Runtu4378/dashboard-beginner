@@ -70,3 +70,18 @@ $glass_wid: 25rem;
     line-height: 20px;
   }
 }
+
+// 适配相关
+@media only screen and(max-width: 1000px){
+  .login-bg {
+    background: none;
+  }
+  .opa-area {
+    display: none;
+  }
+  .glass-area {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+  }
+}
