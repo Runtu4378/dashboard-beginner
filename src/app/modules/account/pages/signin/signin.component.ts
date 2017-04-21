@@ -17,7 +17,7 @@ export class SignInComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private account: AccountService) {
     this.form = fb.group({
       'userName': ['', Validators.required],
-      'password': ['', Validators.required],
+      'password': ['', [Validators.required, Validators.minLength(7), Validators.maxLength(42)]],
       'rememberAccount': ['']
     });
   }

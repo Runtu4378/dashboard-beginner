@@ -32,7 +32,8 @@
       <i class="icon icon-error"></i>  {{messageTips}}
     </div>
     <div class="form-group ">
-      <button class="btn btn-lg btn-outline-success btn-block" type="submit" [disabled]="form.controls.userName.invalid || form.controls.password.invalid">Sign In</button>
+      <button class="btn btn-lg btn-outline-success btn-block" type="submit" 
+        [disabled]="(form.status === 'INVALID')">Sign In</button>
     </div>
     <div class="form-group">
       <span class="noaccount-notify">Don't have an account?</span><a [routerLink]="['/account/signup']" class="collect-user">Sign Up</a>
