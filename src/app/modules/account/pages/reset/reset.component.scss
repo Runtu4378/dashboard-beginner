@@ -15,19 +15,11 @@
 }
 
 .beautify-form {
-  .beautify-checkbox {
-    &+label{
-      border: 1px solid rgba(255,255,255,.4);
-      background-color: transparent;
-    } 
-    
-    &:checked + label:after {
-      // background-color: rgba(255,255,255,.4);
-      background-color: #5FC2AA;
-    }
+  .page-header {
+    font-size: toRem(36px);
   }
-  .reset {
+  .back {
+    float: right;
     color: #c9c9c9;
-    padding: 0;
   }
 }

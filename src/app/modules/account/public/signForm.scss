@@ -46,13 +46,6 @@ $feedback_hei: 1.4rem;
     border: none;
     @include placeholder-color(#f9f9f9);
   }
-  .noaccount-notify {
-    color: #fff;
-    &+a {
-      padding: 0 0.5rem;
-    }
-  }
-    
   .form-control-feedback {
     position: absolute;
     width: 100%;

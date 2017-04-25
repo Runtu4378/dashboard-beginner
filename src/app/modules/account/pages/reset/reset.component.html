@@ -1,0 +1,28 @@
+<div class="beautify-form" *ngIf="!showLoading" [@fadeIn]="showForm">
+  <div class="page-header">
+   RESET PASSWORD
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="form-group" [ngClass]="{ 'has-danger': (form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.invalid && form.controls.email.value ,'has-success': (form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.valid && form.controls.email.value }">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon icon icon-youjian"></span>
+        <input type="text" class="form-control" formControlName="email" placeholder="email">
+      </div>
+      <div class="form-control-feedback" *ngIf="(form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.invalid && form.controls.email.value">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.email.dirty || form.controls.email.prinstine) && form.controls.email.valid && form.controls.email.value">Pass</div>
+    </div>
+    <div class="message-tips" *ngIf="messageTips">
+      <i class="icon icon-error"></i>  {{messageTips}}
+    </div>
+    <div class="form-group ">
+      <button class="btn btn-lg btn-outline-success btn-block" type="submit" 
+        [disabled]="(form.status === 'INVALID')">Sent Email</button>
+    </div>
+    <div class="form-group">
+      <a class="back" [routerLink]="['/account/signin']">Back</a>
+    </div>
+  </form>
+</div>
+<div class="loading" *ngIf="showLoading">
+  <app-mit-loading [option]="'load4'"></app-mit-loading>
+</div>

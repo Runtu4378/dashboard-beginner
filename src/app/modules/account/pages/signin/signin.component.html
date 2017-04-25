@@ -8,16 +8,16 @@
         <span class="input-group-addon icon icon-ordinarylogin1"></span>
         <input type="text" class="form-control" formControlName="userName" placeholder="UserName">
       </div>
-      <div class="form-control-feedback" *ngIf="(form.controls.userName.dirty || form.controls.userName.prinstine) && form.controls.userName.invalid && form.controls.userName.value">Illegal</div>
-      <div class="form-control-feedback" *ngIf="(form.controls.userName.dirty || form.controls.userName.prinstine) && form.controls.userName.valid && form.controls.userName.value">Pass</div>
+      <!-- <div class="form-control-feedback" *ngIf="(form.controls.userName.dirty || form.controls.userName.prinstine) && form.controls.userName.invalid && form.controls.userName.value">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.userName.dirty || form.controls.userName.prinstine) && form.controls.userName.valid && form.controls.userName.value">Pass</div> -->
     </div>
     <div class="form-group" [ngClass]="{ 'has-danger': (form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.invalid && form.controls.password.value ,'has-success': (form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.valid && form.controls.password.value }">
       <div class="input-group input-group-lg">
         <span class="input-group-addon icon icon-mima"></span>
         <input type="password" class="form-control" formControlName="password" placeholder="Password">
       </div>
-      <div class="form-control-feedback" *ngIf="(form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.invalid && form.controls.password.value ">Illegal</div>
-      <div class="form-control-feedback" *ngIf="(form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.valid && form.controls.password.value ">Pass</div>
+      <!-- <div class="form-control-feedback" *ngIf="(form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.invalid && form.controls.password.value ">Illegal</div>
+      <div class="form-control-feedback" *ngIf="(form.controls.password.dirty || form.controls.password.prinstine) && form.controls.password.valid && form.controls.password.value ">Pass</div> -->
     </div>
     <div class="form-group ">
       <div class="flex">
@@ -25,7 +25,7 @@
           <input type="checkbox" class="beautify-checkbox" name="rememberme" id="rememberAccount" formControlName="rememberAccount">
           <label for="rememberAccount"></label>Remember Me
         </div>
-        <!--<a [routerLink]="['/account/reset-pw']">reset-pw</a>-->
+        <a class="reset" [routerLink]="['/account/reset-pw']">Reset Password</a>
       </div>
     </div>
     <div class="message-tips" *ngIf="messageTips">

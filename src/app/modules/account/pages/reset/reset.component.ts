@@ -6,17 +6,13 @@ import { AccountService } from '../../services/account.service';
 // 引入动画效果
 import { fadeIn } from '../../../../animation/fadeIn';
 
-// 引入校验规则函数
-import { pwdValidator } from '../../public/accountValidator';
-
 @Component({
-  selector: 'app-sign',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
+  selector: 'app-reset',
+  templateUrl: './reset.component.html',
+  styleUrls: ['./reset.component.scss'],
   animations: [ fadeIn ]
 })
-
-export class SignInComponent implements OnInit {
+export class ResetComponent implements OnInit {
   showForm: string;
   form: FormGroup; 
   showLoading: boolean = false;
@@ -24,11 +20,10 @@ export class SignInComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, private account: AccountService) {
     this.form = fb.group({
-      'userName': ['', Validators.required],
-      'password': ['', [Validators.required]],
-      'rememberAccount': ['']
-    })
+      'email': ['', [Validators.required, Validators.pattern('(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w+)+)')]],
+    });
   }
+
 
   ngOnInit() {
   }

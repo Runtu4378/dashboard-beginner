@@ -15,12 +15,14 @@ let module = [
 import { AccountComponent } from './account.component';
 import { SignInComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ResetComponent } from './pages/reset/reset.component';
 
 
 let page = [
   AccountComponent,
   SignInComponent,
-  SignupComponent
+  SignupComponent,
+  ResetComponent
 ];
 
 

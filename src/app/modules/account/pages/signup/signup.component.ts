@@ -6,6 +6,9 @@ import { AccountService } from '../../services/account.service';
 // 引入动画效果
 import { fadeIn } from '../../../../animation/fadeIn';
 
+// 引入校验规则函数
+import { pwdRules, pwdValidator } from '../../public/accountValidator';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -26,9 +29,18 @@ export class SignupComponent implements OnInit {
       'lastName': ['', Validators.required],
       'username': ['', Validators.required],
       'email': ['', [Validators.required, Validators.pattern('(\\w)+(\\.\\w+)*@(\\w)+((\\.\\w+)+)')]],
-      'password': ['', [Validators.required, Validators.minLength(7), Validators.maxLength(42)]],
+      'password': ['', [Validators.required, Validators.pattern(pwdRules)]],
     });
   }
+
+  // dealFormErr(g:FormGroup){
+  //   // 错误处理中间件
+  //   let msg = pwdValidator(g);
+  //   console.log(msg);
+  //   this.pwdErr = (msg ? '' : msg);
+  //   return msg ? null : { nomatch: true }
+  // }
+
   ngOnInit() {
   }
 

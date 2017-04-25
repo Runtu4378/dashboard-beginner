@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { SignInComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ResetComponent } from './pages/reset/reset.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,13 @@ const routes: Routes = [
         component: SignupComponent,
         data: {
           title: 'Sign Up'
+        }
+      },
+      {
+        path: 'reset-pw',
+        component: ResetComponent,
+        data: {
+          title: 'Reset Password'
         }
       }
     ]
